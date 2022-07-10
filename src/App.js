@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from 'react';
+import { Box } from './components/Box';
 
 function App() {
   return (
-    <div>
-
+    <div className="container">
+      <Box />
     </div>
   );
 }
