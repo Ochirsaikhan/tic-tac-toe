@@ -27,7 +27,10 @@ code {
 .box-grid {
   display: grid;
   grid-template-columns: auto auto auto;
+  
+  /* Make the perfect square by keeping aspect ratio of 1 */
   width: 40%;
+  aspect-ratio: 1;
 
   /* Place it in the center */
   position: fixed;
@@ -37,10 +40,18 @@ code {
 }
 
 .box-cell {
-  /* background-color: aqua; */
-  /* font-size: 25px; */
-  padding: 4rem;
+
+  /* Make the grid item perfectly centered (mind blown) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 69px;
+  padding: 3.5rem;
   text-align: center;
   border: 1px solid black;
+}
 
+.box-cell:hover {
+  background-color: lightcoral;
 }
