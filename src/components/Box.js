@@ -1,15 +1,15 @@
 export const Box = () => {
     return (
         <div className="box-grid">
-            <div className="box-cell">1</div>
-            <div className="box-cell">2</div>
-            <div className="box-cell">3</div>
-            <div className="box-cell">4</div>
-            <div className="box-cell">5</div>
-            <div className="box-cell">6</div>
-            <div className="box-cell">7</div>
-            <div className="box-cell">8</div>
-            <div className="box-cell">9</div>
+            <div className="box-cell" id="top-left">X</div>
+            <div className="box-cell" id="top-middle">O</div>
+            <div className="box-cell" id="top-right">3</div>
+            <div className="box-cell" id="middle-left">4</div>
+            <div className="box-cell" id="middle-middle">5</div>
+            <div className="box-cell" id="middle-right">6</div>
+            <div className="box-cell" id="bottom-left">7</div>
+            <div className="box-cell" id="bottom-middle">8</div>
+            <div className="box-cell" id="bottom-right">9</div>
         </div>
     )
 }
