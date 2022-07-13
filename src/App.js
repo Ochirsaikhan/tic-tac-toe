@@ -10,29 +10,90 @@ function App() {
   
 
   const handleClick = (event) => {
-    console.log(event.target.id);
-    // if (event.target.id == "top-left") {
-    //   setCells([[], [], []]);
-    // }
 
-   switch(event.target.id) {
-    case "top-left":
-      setCells((prevState) => {
-        const newState = [...prevState];
-        newState[0][0] = setPlayer();
-        return newState;
-      });
-      setCurrentPlayer(!currentPlayer);
-      break;
-    case "top-middle":
-      setCells((prevState) => {
-        const newState = [...prevState];
-        newState[0][1] = setPlayer();
-        return newState;
-      });
-      setCurrentPlayer(!currentPlayer);
-      break;
+    // Set the player to the correct cell based on the 
+    // previous state while alternateing between X and O
+    switch(event.target.id) {
+      case "top-left":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[0][0] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;
 
+      case "top-middle":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[0][1] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;  
+
+      case "top-right":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[0][2] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;
+
+      case "middle-left":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[1][0] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;
+
+      case "middle-middle":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[1][1] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;
+
+      case "middle-right":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[1][2] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;
+
+      case "bottom-left":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[2][0] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;
+
+      case "bottom-middle":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[2][1] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;
+
+      case "bottom-right":
+        setCells((prevState) => {
+          const newState = [...prevState];
+          newState[2][2] = setPlayer();
+          return newState;
+        });
+        setCurrentPlayer(!currentPlayer);
+        break;
    }
   }
 
