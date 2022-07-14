@@ -3,15 +3,105 @@ import { Box } from './components/Box';
 
 function App() {
 
-  const [cells, setCells] = useState([[], [], []]);
+  const [cells, setCells] = useState([["", "", ""], ["", "", ""], ["", "", ""]]);
   const [currentPlayer, setCurrentPlayer] = useState(true);
 
   const setPlayer = () => currentPlayer === true ? "X" : "O"; 
   
+  // const checkWinner = () => {
+  //   const cross1 = cells[0][0] + cells[1][1] + cells[2][2];
+  //   const cross2 = cells[0][2] + cells[1][1] + cells[2][0];
+
+  //   if (cross1 === "XXX") {
+  //     console.log("X won in cross1!");
+  //   } else if (cross1 === "OOO") {
+  //     console.log("O won in cross1!");
+  //   }
+
+  //   if (cross2 === "XXX") {
+  //     console.log("X won in cross2!");
+  //   } else if (cross2 === "OOO") {
+  //     console.log("O won in cross2!");
+  //   }
+
+  //   const row1 = cells[0][0] + cells[0][1] + cells[0][2];
+
+  //   if (row1 === "XXX") {
+  //     console.log("X won in row1!");
+  //   } else if (row1 === "OOO") {
+  //     console.log("O won in row1!");
+  //   }
+
+  //   const row2 = cells[1][0] + cells[1][1] + cells[1][2];
+
+  //   if (row2 === "XXX") {
+  //     console.log("X won in row2!");
+  //   } else if (row2 === "OOO") {
+  //     console.log("O won in row2!");
+  //   }
+
+  //   const row3 = cells[2][0] + cells[2][1] + cells[2][2];
+
+  //   if (row3 === "XXX") {
+  //     console.log("X won in row3!");
+  //   } else if (row3 === "OOO") {
+  //     console.log("O won in row3!");
+  //   }
+
+  //   const column1 = cells[0][0] + cells[1][0] + cells[2][0];
+
+  //   if (column1 === "XXX") {
+  //     console.log("X won in column1!");
+  //   } else if (column1 === "OOO") {
+  //     console.log("O won in column1!");
+  //   }
+
+  //   const column2 = cells[0][1] + cells[1][1] + cells[2][1];
+
+  //   if (column2 === "XXX") {
+  //     console.log("X won in column2!");
+  //   } else if (column2 === "OOO") {
+  //     console.log("O won in column2!");
+  //   }
+
+  //   const column3 = cells[0][2] + cells[1][2] + cells[2][2];
+
+  //   if (column3 === "XXX") {
+  //     console.log("X won in column3!");
+  //   } else if (column3 === "OOO") {
+  //     console.log("O won in column3!");
+  //   }
+  // };
+
   const checkWinner = () => {
+
+    for (let i = 0; i < cells.length; i++) {
+    
+      const row = cells[i].reduce((accumulator, currentValue) => {
+          return accumulator + currentValue;
+      });
+  
+      if (row === "XXX") {
+        console.log("X won in row!");
+      } else if (row === "OOO") {
+        console.log("O won in row!");
+      }
+  
+      let column = "";
+      for (let j = 0; j < cells[i].length; j++) {
+         column += cells[j][i];
+      }
+  
+      if (column === "XXX") {
+        console.log("X won in column!");
+      } else if (column === "OOO") {
+        console.log("O won in column!");
+      }
+    }
+
     const cross1 = cells[0][0] + cells[1][1] + cells[2][2];
     const cross2 = cells[0][2] + cells[1][1] + cells[2][0];
-
+    
     if (cross1 === "XXX") {
       console.log("X won in cross1!");
     } else if (cross1 === "OOO") {
@@ -22,54 +112,6 @@ function App() {
       console.log("X won in cross2!");
     } else if (cross2 === "OOO") {
       console.log("O won in cross2!");
-    }
-
-    const row1 = cells[0][0] + cells[0][1] + cells[0][2];
-
-    if (row1 === "XXX") {
-      console.log("X won in row1!");
-    } else if (row1 === "OOO") {
-      console.log("O won in row1!");
-    }
-
-    const row2 = cells[1][0] + cells[1][1] + cells[1][2];
-
-    if (row2 === "XXX") {
-      console.log("X won in row2!");
-    } else if (row2 === "OOO") {
-      console.log("O won in row2!");
-    }
-
-    const row3 = cells[2][0] + cells[2][1] + cells[2][2];
-
-    if (row3 === "XXX") {
-      console.log("X won in row3!");
-    } else if (row3 === "OOO") {
-      console.log("O won in row3!");
-    }
-
-    const column1 = cells[0][0] + cells[1][0] + cells[2][0];
-
-    if (column1 === "XXX") {
-      console.log("X won in column1!");
-    } else if (column1 === "OOO") {
-      console.log("O won in column1!");
-    }
-
-    const column2 = cells[0][1] + cells[1][1] + cells[2][1];
-
-    if (column2 === "XXX") {
-      console.log("X won in column2!");
-    } else if (column2 === "OOO") {
-      console.log("O won in column2!");
-    }
-
-    const column3 = cells[0][2] + cells[1][2] + cells[2][2];
-
-    if (column3 === "XXX") {
-      console.log("X won in column3!");
-    } else if (column3 === "OOO") {
-      console.log("O won in column3!");
     }
   };
 
