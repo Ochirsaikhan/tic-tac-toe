@@ -36,6 +36,9 @@ code {
   width: 40%;
   aspect-ratio: 1;
 
+  max-width: 576px;
+  max-height: 576px;
+
   /* Place it in the center */
   position: fixed;
   top: 50%;
@@ -63,4 +66,9 @@ code {
 
 .box-cell:hover {
   background-color: lightcoral;
+}
+
+.container {
+  /* background-image: url("https://static.vecteezy.com/system/resources/previews/004/532/221/non_2x/tic-tac-toe-seamless-background-on-dark-blue-illustration-vector.jpg"); */
+  background-color: aqua;
 }
