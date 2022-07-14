@@ -8,6 +8,17 @@ function App() {
 
   const setPlayer = () => currentPlayer === true ? "X" : "O"; 
   
+  const checkWinner = () => {
+    const sum = cells[0][0] + cells[1][1] + cells[2][2];
+    const sum2 = cells[0][2] + cells[1][1] + cells[2][0];
+    if (sum === "XXX" || sum === "OOO") {
+      console.log("There is a winner!");
+    } else if (sum2 === "XXX" || sum2 === "OOO") {
+      console.log("There is a winner!");
+    }
+  };
+
+  useEffect(checkWinner, [cells]);
 
   const handleClick = (event) => {
 
@@ -93,6 +104,10 @@ function App() {
           return newState;
         });
         setCurrentPlayer(!currentPlayer);
+        break;
+
+      default:
+        alert("Something is not right");
         break;
    }
   }
