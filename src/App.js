@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import swal from 'sweetalert';
 import { Box } from './components/Box';
 
 function App() {
@@ -14,79 +15,79 @@ function App() {
     const cross1 = cells[0][0] + cells[1][1] + cells[2][2];
     const cross2 = cells[0][2] + cells[1][1] + cells[2][0];
 
-    if (cross1 === "XXX") {
-      console.log("X won in cross1!");
+    if (cross1 === "XXX") { 
       setWinner("X");
+      swal("X won 🎉", "O sucks at this game 💀", "success");
     } else if (cross1 === "OOO") {
-      console.log("O won in cross1!");
+      swal("O won 🎉", "X sucks at this game 💀", "success");
       setWinner("O");
     }
 
     if (cross2 === "XXX") {
-      console.log("X won in cross2!");
+      swal("X won 🎉", "O sucks at this game 💀", "success");
       setWinner("X");
     } else if (cross2 === "OOO") {
-      console.log("O won in cross2!");
+      swal("O won 🎉", "X sucks at this game 💀", "success");
       setWinner("O");
     }
 
     const row1 = cells[0][0] + cells[0][1] + cells[0][2];
 
     if (row1 === "XXX") {
-      console.log("X won in row1!");
+      swal("X won 🎉", "O sucks at this game 💀", "success");
       setWinner("X");
     } else if (row1 === "OOO") {
-      console.log("O won in row1!");
+      swal("O won 🎉", "X sucks at this game 💀", "success");
       setWinner("O");
     }
 
     const row2 = cells[1][0] + cells[1][1] + cells[1][2];
 
     if (row2 === "XXX") {
-      console.log("X won in row2!");
+      swal("X won 🎉", "O sucks at this game 💀", "success");
       setWinner("X");
     } else if (row2 === "OOO") {
-      console.log("O won in row2!");
+      swal("O won 🎉", "X sucks at this game 💀", "success");
       setWinner("O");
     }
 
     const row3 = cells[2][0] + cells[2][1] + cells[2][2];
 
     if (row3 === "XXX") {
-      console.log("X won in row3!");
+      swal("X won 🎉", "O sucks at this game 💀", "success");
       setWinner("X");
     } else if (row3 === "OOO") {
-      console.log("O won in row3!");
+      swal("O won 🎉", "X sucks at this game 💀", "success");
       setWinner("O");
     }
 
     const column1 = cells[0][0] + cells[1][0] + cells[2][0];
 
     if (column1 === "XXX") {
-      console.log("X won in column1!");
+      swal("X won 🎉", "O sucks at this game 💀", "success");
       setWinner("X");
     } else if (column1 === "OOO") {
-      console.log("O won in column1!");
+      swal("O won 🎉", "X sucks at this game 💀", "success");
       setWinner("O");
     }
 
     const column2 = cells[0][1] + cells[1][1] + cells[2][1];
 
     if (column2 === "XXX") {
-      console.log("X won in column2!");
+      swal("X won 🎉", "O sucks at this game 💀", "success");
       setWinner("X");
     } else if (column2 === "OOO") {
-      console.log("O won in column2!");
+      swal("O won 🎉", "X sucks at this game 💀", "success");
       setWinner("O");
     }
 
     const column3 = cells[0][2] + cells[1][2] + cells[2][2];
 
     if (column3 === "XXX") {
-      console.log("X won in column3!");
+      swal("X won 🎉", "O sucks at this game 💀", "success");
       setWinner("X");
     } else if (column3 === "OOO") {
-      console.log("O won in column3!");
+      swal("O won 🎉", "X sucks at this game 💀", "success");
       setWinner("O");
     }
 
@@ -99,7 +100,7 @@ function App() {
     }
 
     if (summation.length === 9) {
-      console.log("You guys are tied!");
+      swal("TIED ", "info");
     }
   };
 
