@@ -104,3 +104,13 @@ body {
 .btn:hover {
   background-color: #1DDD33;
 }
+
+.score {
+  font-family: "Press Start 2P";
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  color: greenyellow;
+  margin: auto;
+
+}
