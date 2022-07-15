@@ -1,12 +1,14 @@
 import {useState, useEffect} from 'react';
 import swal from 'sweetalert';
 import { Box } from './components/Box';
+import { NewGame } from './components/NewGame';
+import { Score } from './components/Score';
 
 function App() {
 
   const [cells, setCells] = useState([["", "", ""], ["", "", ""], ["", "", ""]]);
   const [currentPlayer, setCurrentPlayer] = useState(true);
-  const [winner, setWinner] = useState(false);
+  const [winner, setWinner] = useState({"X" : 0, "O": 0});
 
   const setPlayer = () => currentPlayer === true ? "X" : "O"; 
   
@@ -16,7 +18,10 @@ function App() {
     const cross2 = cells[0][2] + cells[1][1] + cells[2][0];
 
     if (cross1 === "XXX") { 
-      setWinner("X");
+      setWinner((prev) => {
+        const previous = {...prev};
+        return previous.X +=1;
+      });
       swal("X won 🎉", "O sucks at this game 💀", "success");
     } else if (cross1 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
@@ -100,7 +105,7 @@ function App() {
     }
 
     if (summation.length === 9) {
-      swal("TIED ", "info");
+      swal("🪢", "You guys are TIED", "info");
     }
   };
 
@@ -198,9 +203,15 @@ function App() {
    }
   }
 
+  const restartGame = () => {
+    setCells([["", "", ""], ["", "", ""], ["", "", ""]]);
+  };
+
   return (
     <div className="container">
       <Box onClick={handleClick} cells={cells}/>
+      <NewGame onClick={restartGame}/>
+      <Score winner={winner} />
     </div>
   );
 }
