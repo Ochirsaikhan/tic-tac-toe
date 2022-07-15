@@ -24,6 +24,8 @@ code {
 
 /* ------------------------------------------------------------------------------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .box-grid {
   display: grid;
 
@@ -56,7 +58,7 @@ code {
   font-size: 69px;
   padding: 3.5rem;
   text-align: center;
-  border: 1px solid white;
+  border: 1.8px solid white;
   /* border-radius: 20%; */
 
   /* Prevent grid items from stretching */
@@ -72,8 +74,33 @@ code {
 
 body {
   background-color: #AB5DEE;
+  /* background-color: black; */
 }
 
 .swal-overlay {
   background-color: rgba(29, 221, 51, 0.4);
+}
+
+.btn {
+  position: absolute;
+  font-family: "Press Start 2P";
+
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 15%;
+
+  padding: 1rem;
+  /* border-radius: 10%; */
+
+  margin-top: 3%;
+
+  background-color: orange;
+  color: white;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: #1DDD33;
 }
