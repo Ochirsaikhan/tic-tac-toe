@@ -20,80 +20,141 @@ function App() {
     if (cross1 === "XXX") { 
       setWinner((prev) => {
         const previous = {...prev};
-        return previous.X +=1;
+        previous.X +=1;
+        return previous;
       });
       swal("X won 🎉", "O sucks at this game 💀", "success");
     } else if (cross1 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
-      setWinner("O");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.O +=1;
+        return previous;
+      });
     }
 
     if (cross2 === "XXX") {
       swal("X won 🎉", "O sucks at this game 💀", "success");
-      setWinner("X");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.X +=1;
+        return previous;
+      });
     } else if (cross2 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
-      setWinner("O");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.O +=1;
+        return previous;
+      });
     }
 
     const row1 = cells[0][0] + cells[0][1] + cells[0][2];
 
     if (row1 === "XXX") {
       swal("X won 🎉", "O sucks at this game 💀", "success");
-      setWinner("X");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.X +=1;
+        return previous;
+      });
     } else if (row1 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
-      setWinner("O");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.O +=1;
+        return previous;
+      });
     }
 
     const row2 = cells[1][0] + cells[1][1] + cells[1][2];
 
     if (row2 === "XXX") {
       swal("X won 🎉", "O sucks at this game 💀", "success");
-      setWinner("X");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.X +=1;
+        return previous;
+      });
     } else if (row2 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
-      setWinner("O");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.O +=1;
+        return previous;
+      });
     }
 
     const row3 = cells[2][0] + cells[2][1] + cells[2][2];
 
     if (row3 === "XXX") {
       swal("X won 🎉", "O sucks at this game 💀", "success");
-      setWinner("X");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.X +=1;
+        return previous;
+      });
     } else if (row3 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
-      setWinner("O");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.O +=1;
+        return previous;
+      });
     }
 
     const column1 = cells[0][0] + cells[1][0] + cells[2][0];
 
     if (column1 === "XXX") {
       swal("X won 🎉", "O sucks at this game 💀", "success");
-      setWinner("X");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.X +=1;
+        return previous;
+      });
     } else if (column1 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
-      setWinner("O");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.O +=1;
+        return previous;
+      });
     }
 
     const column2 = cells[0][1] + cells[1][1] + cells[2][1];
 
     if (column2 === "XXX") {
       swal("X won 🎉", "O sucks at this game 💀", "success");
-      setWinner("X");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.X +=1;
+        return previous;
+      });
     } else if (column2 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
-      setWinner("O");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.O +=1;
+        return previous;
+      });
     }
 
     const column3 = cells[0][2] + cells[1][2] + cells[2][2];
 
     if (column3 === "XXX") {
       swal("X won 🎉", "O sucks at this game 💀", "success");
-      setWinner("X");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.X +=1;
+        return previous;
+      });
     } else if (column3 === "OOO") {
       swal("O won 🎉", "X sucks at this game 💀", "success");
-      setWinner("O");
+      setWinner((prev) => {
+        const previous = {...prev};
+        previous.O +=1;
+        return previous;
+      });
     }
 
     let summation = "";
@@ -203,7 +264,8 @@ function App() {
    }
   }
 
-  const restartGame = () => {
+  const restartGame = (e) => {
+    e.preventDefault();
     setCells([["", "", ""], ["", "", ""], ["", "", ""]]);
   };
 
