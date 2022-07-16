@@ -6,17 +6,26 @@ import { Score } from './components/Score';
 
 function App() {
 
+  // This state is used for adding X and O to the Box component
   const [cells, setCells] = useState([["", "", ""], ["", "", ""], ["", "", ""]]);
+
+  // This state keeps track of current user
   const [currentPlayer, setCurrentPlayer] = useState(true);
+
+  // This state keeps track of the winner's scores
   const [winner, setWinner] = useState({"X" : 0, "O": 0});
 
+  // Alternate between X and O using the state above
   const setPlayer = () => currentPlayer === true ? "X" : "O"; 
   
+  // This is the main function that checks if there is winner
   const checkWinner = () => {
     
+    // Concatenate the string diagonally
     const cross1 = cells[0][0] + cells[1][1] + cells[2][2];
     const cross2 = cells[0][2] + cells[1][1] + cells[2][0];
 
+    // Check if there is a winner diagonally
     if (cross1 === "XXX") { 
       setWinner((prev) => {
         const previous = {...prev};
@@ -49,6 +58,7 @@ function App() {
       });
     }
 
+    // Concatenate the first row's strings
     const row1 = cells[0][0] + cells[0][1] + cells[0][2];
 
     if (row1 === "XXX") {
@@ -103,6 +113,7 @@ function App() {
       });
     }
 
+    // Concatenate the first column's strings
     const column1 = cells[0][0] + cells[1][0] + cells[2][0];
 
     if (column1 === "XXX") {
@@ -157,6 +168,7 @@ function App() {
       });
     }
 
+    // This reflects how many X and Os are in the current cells state
     let summation = "";
 
     for (let i = 0; i < cells.length; i++) {
@@ -165,13 +177,16 @@ function App() {
       }
     }
 
+    // If there is 9 elements in the box, it's a tie
     if (summation.length === 9) {
       swal("🪢", "You guys are TIED", "info");
     }
   };
 
+  // Only call checkWinner when the cells state updates
   useEffect(checkWinner, [cells]);
 
+  // This function handles the logic behind adding X or O to the correct cell
   const handleClick = (event) => {
 
     // Set the player to the correct cell based on the 
@@ -264,11 +279,13 @@ function App() {
    }
   }
 
+  // This function restarts the game by updating the cells state without refreshing the browser
   const restartGame = (e) => {
     e.preventDefault();
     setCells([["", "", ""], ["", "", ""], ["", "", ""]]);
   };
 
+  // Display components
   return (
     <div className="container">
       <Box onClick={handleClick} cells={cells}/>
