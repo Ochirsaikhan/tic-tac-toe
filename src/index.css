@@ -59,6 +59,7 @@ code {
   padding: 3.5rem;
   text-align: center;
   border: 1.8px solid white;
+  color: white;
   /* border-radius: 20%; */
 
   /* Prevent grid items from stretching */
@@ -66,19 +67,22 @@ code {
   min-height: 0;
 
   transition: all 0.3s;
+  /* background-color: rgb(175, 151, 175); */
 }
 
 .box-cell:hover {
-  background-color: #1DA11F;
+  background-color: #5f3694;
 }
 
 body {
-  background-color: #AB5DEE;
+  background-color: #11081e;
+  /* background-color: hotpink; */
+  /* background-color: rgb(133, 57, 240); */
   /* background-color: black; */
 }
 
 .swal-overlay {
-  background-color: rgba(29, 221, 51, 0.4);
+  background-color: rgba(39, 69, 42);
 }
 
 .btn {
@@ -112,5 +116,8 @@ body {
   width: 40%;
   color: greenyellow;
   margin: auto;
+}
 
+.point {
+  color: white;
 }
