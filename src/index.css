@@ -75,10 +75,10 @@ code {
 }
 
 body {
-  background-color: #11081e;
+  /* background-color: #11081e; */
   /* background-color: hotpink; */
   /* background-color: rgb(133, 57, 240); */
-  /* background-color: black; */
+  background-color: black;
 }
 
 .swal-overlay {
